@@ -47,24 +47,12 @@ app.use(sanitizeMiddleware)
 connectDb();
 connectCloudinary();
 
-
-
-// app.use('/api/v1/schemes', schemesRouter)
-// app.use('/api/v1/announcement', announcementRouter)
-// app.use('/api/v1/user', userRouter)
-// app.use('/api/v1/admin', adminRouter)
-// app.use('/api/v1/employee', employeeRouter)
-// app.use('/api/v1/user/scheme', schemeAppliedRouter)
-// app.use('/api/v1/notification', notificationRouter)
-// app.use('/api/v1/grievances', grievanceRouter)
-// app.use('/api/v1/messages', messageRouter)
-// app.use("/api/v1/contact", contactRouter);
-
 // RateLimiter + Routes
 app.use('/api/v1/schemes', createRateLimiter('light'), schemesRouter);
 app.use('/api/v1/announcement', createRateLimiter('light'), announcementRouter);
 app.use('/api/v1/user', createRateLimiter('strict'), userRouter);
 app.use('/api/v1/admin', createRateLimiter('strict'), adminRouter);
+app.use('/api/v1/employee', createRateLimiter('strict'), employeeRouter);
 app.use('/api/v1/user/scheme', createRateLimiter('moderate'), schemeAppliedRouter);
 app.use('/api/v1/messages', createRateLimiter('moderate'), messageRouter);
 app.use('/api/v1/notification', createRateLimiter('moderate'), notificationRouter);

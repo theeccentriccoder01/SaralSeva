@@ -44,6 +44,7 @@ const GrievancesRegistrationForm = ({ isAuthenticated }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const id = localStorage.getItem("id");
+  const token = localStorage.getItem("token");
 
   const onSubmit = async (data) => {
     setLoading(true);
@@ -62,17 +63,19 @@ const GrievancesRegistrationForm = ({ isAuthenticated }) => {
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/api/v1/grievances/apply`,
         formData,
-        { headers: { "Content-Type": "multipart/form-data" } }
+        { headers: { "Content-Type": "multipart/form-data", Authorization: `Bearer ${token}` } }
       );
 
-      if (response.data.message === 'Grievances applied successfully') {
+      setLoading(false);
+      if (response.data.success && response.data.message === 'Grievances applied successfully') {
         toast.success("Grievance submitted successfully!");
         navigate('/grievances_success', { state: { grievance: response.data.data } });
+      } else {
+        toast.error(response.data.message || "Failed to submit grievance. Please try again.");
       }
     } catch (error) {
-      toast.error("An error occurred during submission.");
-    } finally {
       setLoading(false);
+      toast.error(error.response?.data?.message || "An error occurred during submission.");
     }
   };
 

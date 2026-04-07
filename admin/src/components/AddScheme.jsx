@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button } from "./ui/button";
 import { CircleX, PlusCircle } from "lucide-react";
 import axios from "axios";
 import { toast, Toaster } from "sonner";
+import { AdminContext } from "./context/adminContext";
 
 const AddScheme = () => {
+  const { token } = useContext(AdminContext);
   const [scheme_name, setScheme_name] = useState("");
   const [scheme_dept, setScheme_dept] = useState("");
   const [scheme_code, setScheme_code] = useState("");
@@ -31,7 +33,7 @@ const AddScheme = () => {
     formData.append("scheme_code", scheme_code);
 
     try {
-        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/schemes/add_scheme`, formData);
+        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/schemes/add_scheme`, formData, { headers: { Authorization: `Bearer ${token}` } });
         toast.success("Scheme Added Successfully");
         // Reset form fields
         setScheme_name(""); setScheme_dept(""); setScheme_details("");

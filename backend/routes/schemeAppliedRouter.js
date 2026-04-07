@@ -2,7 +2,7 @@ import express from 'express'
 import { applyScheme, checkSchemeStatus, getAllSchemes, getAppliedSchemes, getSingleAppliedScheme } from '../controllers/schemeApplied.js';
 import upload from '../middleware/multer.js';
 import multerErrorHandle from '../middleware/multerErrorHandle.js';
-import { requireUser, requireAdmin, requireAuth } from '../middleware/rbac.js';
+import { requireUser, requireAdmin, requireAuth, requireAnyRole } from '../middleware/rbac.js';
 
 const schemeAppliedRouter = express.Router()
 
@@ -19,7 +19,7 @@ schemeAppliedRouter.get('/getAppliedSchemes', ...requireAuth, getAppliedSchemes)
 schemeAppliedRouter.get('/getSingleScheme/:id', ...requireAuth, getSingleAppliedScheme)
 schemeAppliedRouter.post('/checkSchemeStatus', ...requireAuth, checkSchemeStatus)
 
-// Protected routes - admin role required
-schemeAppliedRouter.get('/getAllSchemes', ...requireAdmin, getAllSchemes)
+// Protected routes - admin or employee role required
+schemeAppliedRouter.get('/getAllSchemes', ...requireAnyRole(['admin', 'employee']), getAllSchemes)
 
 export default schemeAppliedRouter;

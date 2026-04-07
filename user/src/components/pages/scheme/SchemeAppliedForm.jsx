@@ -151,6 +151,7 @@ const SchemeAppliedForm = () => {
   const { scheme_name, scheme_code } = location.state || {};
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
+  const token = localStorage.getItem("token");
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
@@ -169,16 +170,18 @@ const SchemeAppliedForm = () => {
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/scheme/schemeApplied`,
         formData,
-        { headers: { "Content-Type": "multipart/form-data" } }
+        { headers: { "Content-Type": "multipart/form-data", Authorization: `Bearer ${token}` } }
       );
-      if (response.data.message === "Scheme applied successfully") {
+      setLoading(false);
+      if (response.data.success && response.data.message === "Scheme applied successfully") {
         toast.success("Scheme applied successfully");
         navigate("/scheme_applied_success", { state: { scheme: response.data.data } });
+      } else {
+        toast.error(response.data.message || "Failed to submit application. Please try again.");
       }
     } catch (error) {
-      toast.error("An error occurred during submission.");
-    } finally {
       setLoading(false);
+      toast.error(error.response?.data?.message || "An error occurred during submission.");
     }
   };
 

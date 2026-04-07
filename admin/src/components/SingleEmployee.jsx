@@ -13,30 +13,32 @@ const SingleEmployee = () => {
   const { id } = useParams();
   const [performance, setPerformance] = useState([{}]);
   const [grievancePerformance, setGrievancePerformance] = useState([{}]);
-  const { id: sender, getUniqueRecipientsWithLatestMessage } = useContext(AdminContext);
+  const { id: sender, token, getUniqueRecipientsWithLatestMessage } = useContext(AdminContext);
+  const authHeaders = { headers: { Authorization: `Bearer ${token}` } };
   const [singleEmployee, setSingleEmployee] = useState({});
   const [msg, setMsg] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    if (!token) return;
     const handleSingleEmployee = async (id) => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/getSingleEmployee/${id}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/getSingleEmployee/${id}`, authHeaders);
         setSingleEmployee(res.data.employee);
       } catch (error) { console.log(error); }
     };
     const employeePerformance = async (id) => {
-      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/employeePerformance`, { id });
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/employeePerformance`, { id }, authHeaders);
       setPerformance(res.data.data);
     };
     const employeeGreivancePerformance = async (id) => {
-      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/employeeGrievancePerformance`, { id });
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/employeeGrievancePerformance`, { id }, authHeaders);
       setGrievancePerformance(res.data.data);
     };
     handleSingleEmployee(id);
     employeePerformance(id);
     employeeGreivancePerformance(id);
-  }, [id]);
+  }, [id, token]);
 
   const chartConfig = { total: { label: "Total Tickets" }, open: { label: "Open Tickets" }, close: { label: "Close Tickets" } };
   const chartConfig1 = { total: { label: "Total Grievances" }, open: { label: "Open Grievances" }, close: { label: "Close Grievances" } };
@@ -48,7 +50,7 @@ const SingleEmployee = () => {
 
   const handleSubmitSend = async () => {
     try {
-      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/messages/sendMessage`, { sender, senderType: "Admin", receiver: id, message: msg, receiverType: "employee" });
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/messages/sendMessage`, { sender, senderType: "Admin", receiver: id, message: msg, receiverType: "employee" }, authHeaders);
       toast.success("Message sent successfully");
       setMsg("");
       setIsOpen(false);

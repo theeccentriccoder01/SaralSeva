@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Megaphone, PlusCircle } from "lucide-react";
 import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import axios from "axios";
 import { toast, Toaster } from "sonner";
+import { AdminContext } from "./context/adminContext";
 
 const Announcement = () => {
+  const { token } = useContext(AdminContext);
   const [isOpen, setIsOpen] = useState(false);
   const [announcement_details, setAnnouncement_details] = useState("");
   const [announcements, setAnnouncements] = useState([]);
@@ -25,7 +27,7 @@ const Announcement = () => {
 
   const handleAnnouncement = async () => {
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/announcement/add_announcement`, { announcement_details });
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/announcement/add_announcement`, { announcement_details }, { headers: { Authorization: `Bearer ${token}` } });
       if (res.data.message === 'announcement added successfully') {
         toast.success("Announcement added successfully!");
         setIsOpen(false);

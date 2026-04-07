@@ -79,8 +79,8 @@ const loginAdmin = async (req, res) => {
     const errors = {};
 
     if (!validEmail(email)) errors.email = "Invalid email format.";
-    if (!validPassword(password))
-        errors.password = "Password format is invalid.";
+    if (!password)
+        errors.password = "Password is required.";
 
     if (Object.keys(errors).length > 0) {
         return res.status(400).json({ success: false, message: "Validation failed.", errors });

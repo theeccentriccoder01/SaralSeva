@@ -10,10 +10,10 @@ const employeeRouter = express.Router();
 employeeRouter.post('/register', register_employee)
 employeeRouter.post('/login', login_employee)
 
-// Protected routes - employee role required
-employeeRouter.get('/getSingleEmployee/:id', ...requireEmployee, getSingleEmployee)
-employeeRouter.post('/employeePerformance', ...requireEmployee, employeePerformance)
-employeeRouter.post('/employeeGrievancePerformance', ...requireEmployee, employeeGrievancePerformance)
+// Protected routes - employee or admin role required
+employeeRouter.get('/getSingleEmployee/:id', ...requireAnyRole(['admin', 'employee']), getSingleEmployee)
+employeeRouter.post('/employeePerformance', ...requireAnyRole(['admin', 'employee']), employeePerformance)
+employeeRouter.post('/employeeGrievancePerformance', ...requireAnyRole(['admin', 'employee']), employeeGrievancePerformance)
 employeeRouter.post('/editEmployee', ...requireEmployee, multerErrorhandle(upload.single('profilePic')), editEmployee)
 
 // Protected routes - admin role required

@@ -104,7 +104,7 @@ const loginUser = async (req, res) => {
       id: user._id,
       role: user.role || 'user'
     }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
+      expiresIn: '7d',
     });
 
 
@@ -185,7 +185,7 @@ const googleLogin = async (req, res) => {
           id: user._id,
           role: user.role || 'user'
         }, process.env.JWT_SECRET, {
-          expiresIn: "1h",
+          expiresIn: "7d",
         });
 
         return res.json({

@@ -12,7 +12,7 @@ import axios from "axios";
 import S from './../../../S.png';
 
 const Header = () => {
-  const { isAuthenticated, notificationCount, limitNotification, markAsRead, getNotification, getLimitNotifications, logout, id: receiver } = useContext(AdminContext);
+  const { isAuthenticated, notificationCount, limitNotification, markAsRead, getNotification, getLimitNotifications, logout, id: receiver, token } = useContext(AdminContext);
   const [newMessages, setNewMessages] = useState([]);
 
   const handleMarkAsRead = async (notificationId) => {
@@ -28,14 +28,14 @@ const Header = () => {
 
   useEffect(() => {
     const getNewMessages = async () => {
-      if (!receiver) return;
+      if (!receiver || !token) return;
       try {
-        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/messages/getNewMessages`, { receiver });
+        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/messages/getNewMessages`, { receiver }, { headers: { Authorization: `Bearer ${token}` } });
         setNewMessages(res.data.messages);
       } catch (error) { console.error("Failed to fetch new messages", error); }
     };
     getNewMessages();
-  }, [receiver]);
+  }, [receiver, token]);
 
   return (
     <div className="px-[1vw] py-2 w-full sticky top-0 z-50 bg-white shadow-md">

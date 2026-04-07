@@ -31,6 +31,11 @@ const AdminProvider = ({ children }) => {
   const [totalOpenGrievance, setOpenGrievance] = useState(0);
   const [totalCloseGrievance, setCloseGrievance] = useState(0);
 
+  const authHeaders = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
 
   const login = async (formData) => {
     try {
@@ -75,40 +80,36 @@ const AdminProvider = ({ children }) => {
     setId(null);
   };
 
-  const getSingleAdmin = async (id) => {
+  const getSingleAdmin = async (adminId) => {
+    if (!adminId) return;
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/admin/getSingleAdmin/${id}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/admin/getSingleAdmin/${adminId}`,
+        authHeaders
       );
       setAdmin(res.data.admin);
     } catch (error) {
-      console.error("Error fetching admin data:", error);
+      // Error handling without console.log in production
     }
   };
-
-  useEffect(() => {
-    getSingleAdmin();
-  }, []);
 
   const getEmployees = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/getEmployees`
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/getEmployees`,
+        authHeaders
       );
       setEmployees(res.data.employees);
     } catch (error) {
-      console.error("Error fetching employees:", error);
+      // Error handling without console.log in production
     }
   };
 
-  useEffect(() => {
-    getEmployees();
-  }, []);
-
-  const getSingleEmployee = async (id) => {
+  const getSingleEmployee = async (empId) => {
+    if (!empId) return;
     try {
       await axios
-        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/getSingleEmployee/${id}`)
+        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/employee/getSingleEmployee/${empId}`, authHeaders)
         .then((res) => {
           setSingleEmployee(res.data.employee);
         });
@@ -117,10 +118,6 @@ const AdminProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    getSingleEmployee();
-  }, []);
-
   const listSchemes = async () => {
     try {
       const res = await axios.get(
@@ -128,14 +125,9 @@ const AdminProvider = ({ children }) => {
       );
       if (res.data && Array.isArray(res.data.products)) {
         setScheme(res.data.products);
-      } else {
-        console.error(
-          "API response does not contain products array:",
-          res.data
-        );
       }
     } catch (error) {
-      console.error("Error fetching schemes:", error);
+      // Error handling without console.log in production
     }
   };
 
@@ -143,17 +135,17 @@ const AdminProvider = ({ children }) => {
     listSchemes();
   }, []);
 
-  const getAllSchemes = async (req, res) => {
+  const getAllSchemes = async () => {
     try {
       await axios
-        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/scheme/getAllSchemes`)
+        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/scheme/getAllSchemes`, authHeaders)
         .then((res) => {
           setTickets(res.data.schemes);
           let approved = 0;
           let pending = 0;
           let rejected = 0;
           setTotalProgress(res.data.schemes.length);
-          res.data.schemes.filter((ticket) => {
+          res.data.schemes.forEach((ticket) => {
             if (ticket.final_status === "approved") {
               approved++;
             } else if (ticket.final_status === "pending") {
@@ -171,14 +163,11 @@ const AdminProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    getAllSchemes();
-  }, []);
-
-  const getSingleAppliedScheme = async (id) => {
+  const getSingleAppliedScheme = async (schemeId) => {
+    if (!schemeId) return;
     try {
       await axios
-        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/scheme/getSingleScheme/${id}`)
+        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/scheme/getSingleScheme/${schemeId}`, authHeaders)
         .then((res) => {
           setSingleTicket(res.data.appliedScheme);
         });
@@ -187,14 +176,11 @@ const AdminProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    getSingleAppliedScheme();
-  }, []);
-
   const getLimitNotifications = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/notification/getLimitAdminNotifications`
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/notification/getLimitAdminNotifications`,
+        authHeaders
       );
       setLimitNotification(res.data.notifications);
     } catch (error) {
@@ -202,17 +188,15 @@ const AdminProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    getLimitNotifications();
-  }, []);
-
   const getNotification = async () => {
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/notification/getAdminNotifications`
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/notification/getAdminNotifications`,
+        {},
+        authHeaders
       );
       const filteredNotifications = res.data?.notifications?.filter(
-        (notification) => notification?.recipientId?._id === localStorage.getItem("id")
+        (notification) => notification?.recipientId?._id === id
       );
       setNotifications(filteredNotifications);
       const filterNotificationCount = res.data.notifications.filter(
@@ -225,16 +209,13 @@ const AdminProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    getNotification();
-  }, []);
-
   const markAsRead = async (notificationId) => {
+    if (!notificationId) return;
     try {
       await axios
         .post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/notification/markAsRead`, {
           notificationId,
-        })
+        }, authHeaders)
         .then((res) => {
           getNotification();
         });
@@ -243,20 +224,17 @@ const AdminProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    markAsRead();
-  }, []);
-
   const getAllGrievance = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/grievances/getAllGrievance`
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/grievances/getAllGrievance`,
+        authHeaders
       );
       setGrievance(res.data.grievance);
       setTotalGrievance(res.data.grievance.length);
       let open = 0;
       let closed = 0;
-      res.data.grievance.filter((grievance) => {
+      res.data.grievance.forEach((grievance) => {
         if (grievance.status === "pending") {
           open++;
         } else {
@@ -270,30 +248,25 @@ const AdminProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    getAllGrievance();
-  }, []);
-
-
-
   const progress = () => {
     let total = totalGrievance + totalSchemeProgress;
     let close = totalCloseGrievance + totalApprovedScheme + totalRejectedScheme; 
     let open = totalOpenGrievance + totalPendingScheme;
-    let progress = ((close / total) * 100).toFixed(2);
+    let progressVal = total > 0 ? ((close / total) * 100).toFixed(2) : 0;
     let data = [{
       total: total,
       close: close,
       open: open,
-      progress: progress
+      progress: progressVal
     }]
     return data;
   }
 
-  const getSingleGrievance = async (id) => {
+  const getSingleGrievance = async (grievanceId) => {
+    if (!grievanceId) return;
     try {
       await axios
-        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/grievances/getSingleGrievance/${id}`)
+        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/grievances/getSingleGrievance/${grievanceId}`, authHeaders)
         .then((res) => {
           setSingleGrievance(res.data.grievance);
         });
@@ -302,18 +275,16 @@ const AdminProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    getSingleGrievance(id);
-  }, []);
-
   const getUniqueRecipientsWithLatestMessage = async () => {
+    if (!id) return;
     const sender = id;
     const senderType = "Admin";
     try {
       await axios
         .post(
           `${import.meta.env.VITE_API_BASE_URL}/api/v1/messages/getUniqueRecipientsWithLatestMessage`,
-          { sender, senderType }
+          { sender, senderType },
+          authHeaders
         )
         .then((res) => {
           setUniqueRecipients(res.data.recipients);
@@ -324,23 +295,17 @@ const AdminProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getUniqueRecipientsWithLatestMessage();
-  }, []);
-
-  useEffect(() => {
     if (isAuthenticated && id) {
-      getSingleAdmin(id); // Fetch employee data when authenticated and id is available
+      getSingleAdmin(id);
       getAllSchemes();
-      getSingleAppliedScheme();
-      markAsRead();
+      getEmployees();
       getNotification();
       getLimitNotifications();
       getAllGrievance();
-      getSingleGrievance();
-      getSingleEmployee();
       getUniqueRecipientsWithLatestMessage();
     }
-  }, [isAuthenticated, id]); // Dependencies include isAuthenticated and id
+  }, [isAuthenticated, id, token]);
+ // Dependencies include isAuthenticated and id
 
   return (
     <AdminContext.Provider
