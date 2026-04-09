@@ -24,7 +24,7 @@ const FAQ_EN = [
   <ol>
     <li>Click on the <strong>User Icon</strong> in the navigation bar.</li>
     <li>From the dropdown menu, select <strong>Profile</strong>.</li>
-    <li>Click on <strong>Edit Profile</strong> to make changes to your personal information.</li>
+    <li>Click on <strong>Edit Profile</strong> to make changes to your personal details.</li>
   </ol>
 </div>
 `
