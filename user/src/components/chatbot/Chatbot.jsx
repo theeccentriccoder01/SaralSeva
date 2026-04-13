@@ -8,7 +8,7 @@ const FAQ_EN = [
   {
     triggers: ["help", "assist", "support", "what can you do"],
     response:
-      "Hello! I am SevaMittra. I can guide you on applying for services, tracking requests, managing your account, and navigating the platform professionally.",
+      "Hello! I am SevaMitra. I can guide you on applying for services, tracking requests, managing your account, and navigating the platform professionally.",
   },
   {
     triggers: ["login", "account", "register", "signin", "signup"],
