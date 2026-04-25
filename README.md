@@ -5,9 +5,9 @@
 <h1 align="center">SARALSEVA</h1>
 
 <div align="center" style="margin: 10px 0 24px;">
-  <a href="https://github.com/eccentriccoder01/SaralSeva/issues">🐛 Report Bug</a>
+  <a href="https://github.com/theeccentriccoder/SaralSeva/issues">🐛 Report Bug</a>
   •
-  <a href="https://github.com/eccentriccoder01/SaralSeva/issues">💡 Request Feature</a>
+  <a href="https://github.com/theeccentriccoder/SaralSeva/issues">💡 Request Feature</a>
   
 </div>
 
@@ -82,13 +82,13 @@
      </thead>
     <tbody>
          <tr>
-            <td><img alt="Stars" src="https://img.shields.io/github/stars/eccentriccoder01/SaralSeva?style=flat&logo=github"/></td>
-            <td><img alt="Forks" src="https://img.shields.io/github/forks/eccentriccoder01/SaralSeva?style=flat&logo=github"/></td>
-            <td><img alt="Issues" src="https://img.shields.io/github/issues/eccentriccoder01/SaralSeva?style=flat&logo=github"/></td>
-            <td><img alt="Open PRs" src="https://img.shields.io/github/issues-pr/eccentriccoder01/SaralSeva?style=flat&logo=github"/></td>
-            <td><img alt="Closed PRs" src="https://img.shields.io/github/issues-pr-closed/eccentriccoder01/SaralSeva?style=flat&color=critical&logo=github"/></td>
-            <td><img alt="Languages Count" src="https://img.shields.io/github/languages/count/eccentriccoder01/SaralSeva?style=flat&color=green&logo=github"></td>
-            <td><img alt="Contributors Count" src="https://img.shields.io/github/contributors/eccentriccoder01/SaralSeva?style=flat&color=blue&logo=github"/></td>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/theeccentriccoder/SaralSeva?style=flat&logo=github"/></td>
+            <td><img alt="Forks" src="https://img.shields.io/github/forks/theeccentriccoder/SaralSeva?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/theeccentriccoder/SaralSeva?style=flat&logo=github"/></td>
+            <td><img alt="Open PRs" src="https://img.shields.io/github/issues-pr/theeccentriccoder/SaralSeva?style=flat&logo=github"/></td>
+            <td><img alt="Closed PRs" src="https://img.shields.io/github/issues-pr-closed/theeccentriccoder/SaralSeva?style=flat&color=critical&logo=github"/></td>
+            <td><img alt="Languages Count" src="https://img.shields.io/github/languages/count/theeccentriccoder/SaralSeva?style=flat&color=green&logo=github"></td>
+            <td><img alt="Contributors Count" src="https://img.shields.io/github/contributors/theeccentriccoder/SaralSeva?style=flat&color=blue&logo=github"/></td>
         </tr>
     </tbody>
 </table>
@@ -138,11 +138,11 @@ Experience SaralSeva live here:
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat)
 ![Built with Love](https://img.shields.io/badge/Built%20with-%E2%9D%A4-red?style=for-the-badge)
-![Visitors](https://api.visitorbadge.io/api/Visitors?path=eccentriccoder01%2FSaralSeva%20&countColor=%23263759&style=flat)
-![GitHub Contributors](https://img.shields.io/github/contributors/eccentriccoder01/SaralSeva)
-![GitHub Last Commit](https://img.shields.io/github/last-commit/eccentriccoder01/SaralSeva)
-![GitHub Repo Size](https://img.shields.io/github/repo-size/eccentriccoder01/SaralSeva)
-![Github](https://img.shields.io/github/license/eccentriccoder01/SaralSeva)
+![Visitors](https://api.visitorbadge.io/api/Visitors?path=theeccentriccoder%2FSaralSeva%20&countColor=%23263759&style=flat)
+![GitHub Contributors](https://img.shields.io/github/contributors/theeccentriccoder/SaralSeva)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/theeccentriccoder/SaralSeva)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/theeccentriccoder/SaralSeva)
+![Github](https://img.shields.io/github/license/theeccentriccoder/SaralSeva)
 
  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
@@ -263,7 +263,7 @@ Ensure you have the following installed:
 ### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/eccentriccoder01/SaralSeva.git
+git clone https://github.com/theeccentriccoder/SaralSeva.git
 cd SaralSeva
 ```
 
@@ -403,8 +403,8 @@ Your insights are invaluable to us. Reach out to us team for any inquiries, feed
 
 <h2 id="contact">📞 Contact</h2>
 
-- **Developed by [Eccentric Explorer](https://eccentriccoder01.github.io/Me)**
-- **GitHub Issues**: [Report bugs or request features](https://github.com/eccentriccoder01/SaralSeva/issues)
+- **Developed by [Eccentric Explorer](https://theeccentriccoder.github.io/Me)**
+- **GitHub Issues**: [Report bugs or request features](https://github.com/theeccentriccoder/SaralSeva/issues)
 - **Email**: Contact the maintainers for collaboration opportunities
 
 _Feel free to reach out with any questions or feedback!_
@@ -423,7 +423,7 @@ We love contributions from the community! Whether it's a bug report, a new featu
 
 **_Found a Bug?_**
 
-- Check the [issue tracker](https://github.com/eccentriccoder01/SaralSeva/issues) to see if the bug has already been reported.
+- Check the [issue tracker](https://github.com/theeccentriccoder/SaralSeva/issues) to see if the bug has already been reported.
 - If not, open a new issue and provide as much detail as possible.
 
 **_Have a Feature Idea?_**
@@ -453,28 +453,28 @@ _Thank you to everyone who has made SaralSeva better! 💚_
 
 <h2 id="code-of-conduct">📜 Code of Conduct</h2>
 
-Please refer to the [`Code of Conduct`](https://github.com/eccentriccoder01/SaralSeva/blob/main/CODE_OF_CONDUCT.md) for details on contributing guidelines and community standards.
+Please refer to the [`Code of Conduct`](https://github.com/theeccentriccoder/SaralSeva/blob/main/CODE_OF_CONDUCT.md) for details on contributing guidelines and community standards.
 
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 <h2 id="contribution-guidelines">🤝👤 Contribution Guidelines</h2>
 
-We love our contributors! If you'd like to help, please check out our [`CONTRIBUTE.md`](https://github.com/eccentriccoder01/SaralSeva/blob/main/CONTRIBUTING.md) file for guidelines.
+We love our contributors! If you'd like to help, please check out our [`CONTRIBUTE.md`](https://github.com/theeccentriccoder/SaralSeva/blob/main/CONTRIBUTING.md) file for guidelines.
 
 > Thank you once again to all our contributors who has contributed to **SaralSeva!** Your efforts are truly appreciated. 💖👏
 
 <!-- Contributors badge (auto-updating) -->
 
-[![Contributors](https://img.shields.io/github/contributors/eccentriccoder01/SaralSeva?style=for-the-badge)](https://github.com/RhythmPahwa14/eccentriccoder01/SaralSeva/contributors)
+[![Contributors](https://img.shields.io/github/contributors/theeccentriccoder/SaralSeva?style=for-the-badge)](https://github.com/RhythmPahwa14/theeccentriccoder/SaralSeva/contributors)
 
 <!-- Contributors avatars (auto-updating) -->
 <p align="left">
-  <a href="https://github.com/eccentriccoder01/SaralSeva/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=eccentriccoder01/SaralSeva" alt="Contributors" />
+  <a href="https://github.com/theeccentriccoder/SaralSeva/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=theeccentriccoder/SaralSeva" alt="Contributors" />
   </a>
 </p>
 
-See the full list of contributors and their contributions on the [`GitHub Contributors Graph`](https://github.com/eccentriccoder01/SaralSeva/graphs/contributors).
+See the full list of contributors and their contributions on the [`GitHub Contributors Graph`](https://github.com/theeccentriccoder/SaralSeva/graphs/contributors).
 
  
 
@@ -504,15 +504,15 @@ _If you find SaralSeva project helpful, give it a star! ⭐ to support more such
 
 <h2 id="license">📄 License</h2>
 
-This project is licensed under the MIT License - see the [`License`](https://github.com/eccentriccoder01/SaralSeva/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [`License`](https://github.com/theeccentriccoder/SaralSeva/blob/main/LICENSE) file for details.
 
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 <h2 id="stargazers">⭐ Stargazers</h2>
 
 <div align="center">
-  <a href="https://github.com/eccentriccoder01/SaralSeva/stargazers">
-    <img src="https://reporoster.com/stars/eccentriccoder01/SaralSeva?type=svg&limit=100&names=false" alt="Stargazers" />
+  <a href="https://github.com/theeccentriccoder/SaralSeva/stargazers">
+    <img src="https://reporoster.com/stars/theeccentriccoder/SaralSeva?type=svg&limit=100&names=false" alt="Stargazers" />
   </a>
 </div>
 
@@ -521,8 +521,8 @@ This project is licensed under the MIT License - see the [`License`](https://git
 <h2 id="forkers">🍴 Forkers</h2>
 
 <div align="center">
-  <a href="https://github.com/eccentriccoder01/SaralSeva/members">
-    <img src="https://reporoster.com/forks/eccentriccoder01/SaralSeva?type=svg&limit=100&names=false" alt="Forkers" />
+  <a href="https://github.com/theeccentriccoder/SaralSeva/members">
+    <img src="https://reporoster.com/forks/theeccentriccoder/SaralSeva?type=svg&limit=100&names=false" alt="Forkers" />
   </a>
 </div>
 
@@ -538,7 +538,7 @@ This project is licensed under the MIT License - see the [`License`](https://git
 
 <h3 align="center"> 👨‍💻 Built with ❤️ by SaralSeva Team</h3>
 <p align="center">
-  <a href="https://github.com/eccentriccoder01/SaralSeva/issues">Open an Issue</a> | <a href="https://github.com/eccentriccoder01/SaralSeva">🌟 Star on GitHub</a> | <a href="https://saralseva.vercel.app/">🚀 Live Demo</a></p>
+  <a href="https://github.com/theeccentriccoder/SaralSeva/issues">Open an Issue</a> | <a href="https://github.com/theeccentriccoder/SaralSeva">🌟 Star on GitHub</a> | <a href="https://saralseva.vercel.app/">🚀 Live Demo</a></p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=65&section=footer"/>
 
@@ -552,3 +552,4 @@ This project is licensed under the MIT License - see the [`License`](https://git
 > Ready to show off your coding achievements? Get started with **SaralSeva** today! 🚀
 
  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+

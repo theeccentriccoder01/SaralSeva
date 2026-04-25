@@ -120,8 +120,9 @@ Community Impact Guidelines inspired by [Mozilla’s ladder](https://github.com/
 Thanks goes to these amazing people for making the community better 💜  
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![Contributors](https://img.shields.io/github/contributors/eccentriccoder01/SaralSeva?style=for-the-badge)](https://github.com/eccentriccoder01/SaralSeva/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/theeccentriccoder/SaralSeva?style=for-the-badge)](https://github.com/theeccentriccoder/SaralSeva/graphs/contributors)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- Contributors will automatically show up here -->
-[![Contributors Image](https://contrib.rocks/image?repo=eccentriccoder01/SaralSeva)](https://github.com/eccentriccoder01/SaralSeva/graphs/contributors)  
+[![Contributors Image](https://contrib.rocks/image?repo=theeccentriccoder/SaralSeva)](https://github.com/theeccentriccoder/SaralSeva/graphs/contributors)  
+

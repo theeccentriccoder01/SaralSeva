@@ -37,7 +37,7 @@ If you discover a security vulnerability, please report it through one of these 
 #### For Manual Reports
 
 1. **GitHub Security Advisories**: Use GitHub's private security reporting (preferred)
-2. **Primary Contact**: [@eccentriccoder01](https://github.com/eccentriccoder01)
+2. **Primary Contact**: [@theeccentriccoder](https://github.com/theeccentriccoder)
 3. **Issues**: For non-sensitive security discussions, create an issue with the `security` label
 
 **Please include:**
@@ -137,3 +137,4 @@ Stay informed about security updates:
 ---
 
 **Note**: This security policy is designed to work alongside our automated Dependabot setup, ensuring comprehensive protection while maintaining development velocity.
+
