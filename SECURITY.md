@@ -37,7 +37,7 @@ If you discover a security vulnerability, please report it through one of these 
 #### For Manual Reports
 
 1. **GitHub Security Advisories**: Use GitHub's private security reporting (preferred)
-2. **Primary Contact**: [@theeccentriccoder](https://github.com/theeccentriccoder)
+2. **Primary Contact**: [@theeccentriccoder01](https://github.com/theeccentriccoder01)
 3. **Issues**: For non-sensitive security discussions, create an issue with the `security` label
 
 **Please include:**

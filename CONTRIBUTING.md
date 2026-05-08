@@ -74,7 +74,7 @@ We’re thrilled that you want to contribute to **Eventra**! Follow these steps 
 
 **9.** Setup a reference(remote) to the original repository to get all the changes from the remote.
 ```
-   git remote add upstream https://github.com/theeccentriccoder/SaralSeva.git
+   git remote add upstream https://github.com/theeccentriccoder01/SaralSeva.git
 ```
 
 **10.** Check the remotes for this repository.
