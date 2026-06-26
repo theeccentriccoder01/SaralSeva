@@ -14,9 +14,9 @@ updates:
       timezone: "Asia/Kolkata"
     open-pull-requests-limit: 10
     reviewers:
-      - "eccentriccoder01"
+      - "theeccentriccoder01"
     assignees:
-      - "eccentriccoder01"
+      - "theeccentriccoder01"
     commit-message:
       prefix: "backend"
       prefix-development: "backend-dev"
@@ -55,9 +55,9 @@ updates:
       timezone: "Asia/Kolkata"
     open-pull-requests-limit: 10
     reviewers:
-      - "eccentriccoder01"
+      - "theeccentriccoder01"
     assignees:
-      - "eccentriccoder01"
+      - "theeccentriccoder01"
     commit-message:
       prefix: "user-portal"
       prefix-development: "user-dev"
@@ -116,9 +116,9 @@ updates:
       timezone: "Asia/Kolkata"
     open-pull-requests-limit: 10
     reviewers:
-      - "eccentriccoder01"
+      - "theeccentriccoder01"
     assignees:
-      - "eccentriccoder01"
+      - "theeccentriccoder01"
     commit-message:
       prefix: "admin-portal"
       prefix-development: "admin-dev"
@@ -177,9 +177,9 @@ updates:
       timezone: "Asia/Kolkata"
     open-pull-requests-limit: 10
     reviewers:
-      - "eccentriccoder01"
+      - "theeccentriccoder01"
     assignees:
-      - "eccentriccoder01"
+      - "theeccentriccoder01"
     commit-message:
       prefix: "employee-portal"
       prefix-development: "employee-dev"
@@ -239,7 +239,7 @@ updates:
       timezone: "Asia/Kolkata"
     open-pull-requests-limit: 5
     reviewers:
-      - "eccentriccoder01"
+      - "theeccentriccoder01"
     commit-message:
       prefix: "ci"
       include: "scope"
